@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Tools Kit — Support</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <img src="assets/icon.png" class="app-icon" alt="Dev Tools Kit" />
+        <h1>Dev Tools Kit</h1>
+      </div>
+      <div class="lang-switch">
+        <button class="active" onclick="setLang('fr', this)">FR</button>
+        <button onclick="setLang('en', this)">EN</button>
+      </div>
+    </header>
+
+    <!-- FRENCH -->
+    <div data-lang="fr">
+
+      <div class="card">
+        <h2>Questions fréquentes</h2>
+
+        <div class="faq-item">
+          <strong>Les outils fonctionnent-ils hors connexion ?</strong>
+          <p>Oui. Tous les outils de transformation (JSON, Base64, Regex, Hash, JWT…) s'exécutent localement sur votre appareil. Seul le Client HTTP envoie des requêtes réseau, uniquement celles que vous lancez vous-même.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Qu'est-ce qui est gratuit et qu'est-ce qui est Pro ?</strong>
+          <p>Cinq outils sont gratuits : JSON Formatter, Base64, UUID Generator, String Case Converter et Number Base Converter. Un achat unique « Pro » déverrouille tous les autres outils, sans abonnement.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>J'ai acheté Pro mais les outils sont verrouillés.</strong>
+          <p>Ouvrez les Réglages de l'app et appuyez sur « Restaurer les achats ». Vérifiez que vous êtes connecté avec le même identifiant Apple que lors de l'achat. L'achat est aussi partageable via Partage familial.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Comment obtenir un remboursement ?</strong>
+          <p>Les remboursements sont gérés par Apple. Rendez-vous sur reportaproblem.apple.com et sélectionnez Dev Tools Kit.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Mes données sont-elles envoyées quelque part ?</strong>
+          <p>Le contenu que vous saisissez ou collez n'est jamais envoyé. L'app transmet uniquement des statistiques d'usage anonymes (voir la politique de confidentialité).</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Comment ouvrir un outil depuis une autre app ?</strong>
+          <p>Utilisez la feuille de partage (Share Extension) pour envoyer du texte vers Dev Tools Kit, ou recherchez un outil directement via Spotlight.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Comment signaler un bug ou proposer une idée ?</strong>
+          <p>Depuis les Réglages de l'app, ouvrez « Envoyer un avis », ou écrivez-nous par e-mail ci-dessous.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Nous contacter</h2>
+        <p>Vous avez une question, un bug à signaler ou une suggestion ? Écrivez-nous, nous répondons sous 48h.</p>
+        <a class="contact-email" href="mailto:contact@kcmail.fr">✉️ contact@kcmail.fr</a>
+      </div>
+
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+
+      <div class="card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <strong>Do the tools work offline?</strong>
+          <p>Yes. All transformation tools (JSON, Base64, Regex, Hash, JWT…) run locally on your device. Only the HTTP Client makes network requests, and only the ones you trigger yourself.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>What is free and what is Pro?</strong>
+          <p>Five tools are free: JSON Formatter, Base64, UUID Generator, String Case Converter and Number Base Converter. A one-time "Pro" purchase unlocks all other tools, with no subscription.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>I bought Pro but tools are still locked.</strong>
+          <p>Open the app's Settings and tap "Restore Purchases". Make sure you are signed in with the same Apple ID used for the purchase. The purchase is also available through Family Sharing.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>How do I get a refund?</strong>
+          <p>Refunds are handled by Apple. Go to reportaproblem.apple.com and select Dev Tools Kit.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Is my data sent anywhere?</strong>
+          <p>What you type or paste is never sent. The app only transmits anonymous usage statistics (see the privacy policy).</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>How do I open a tool from another app?</strong>
+          <p>Use the share sheet (Share Extension) to send text to Dev Tools Kit, or find a tool directly through Spotlight.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>How do I report a bug or suggest an idea?</strong>
+          <p>From the app's Settings, open "Send feedback", or email us below.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Contact Us</h2>
+        <p>Have a question, a bug to report, or a suggestion? Write to us — we reply within 48 hours.</p>
+        <a class="contact-email" href="mailto:contact@kcmail.fr">✉️ contact@kcmail.fr</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="privacy.html">
+        <span data-lang="fr">Politique de confidentialité</span>
+        <span data-lang="en" style="display:none">Privacy Policy</span>
+      </a>
+      &nbsp;·&nbsp;
+      <span data-lang="fr">© 2026 Kevin Cabon</span>
+      <span data-lang="en" style="display:none">© 2026 Kevin Cabon</span>
+    </footer>
+
+  </div>
+
+  <script>
+    function setLang(lang, btn) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Auto-detect browser language on load
+    (function() {
+      const lang = (navigator.language || 'fr').startsWith('fr') ? 'fr' : 'en';
+      if (lang === 'en') {
+        setLang('en', document.querySelector('.lang-switch button:last-child'));
+      }
+    })();
+  </script>
+</body>
+</html>
